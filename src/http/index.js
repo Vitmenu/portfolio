@@ -29,7 +29,10 @@ app.use(helmet({
                 `${env.siteUrl}`,
             ],
             imgSrc: [
+                `self`,
                 env.cloudfront_dist_domain,
+                `blob:`,
+                `data:`,
             ],
             mediaSrc: [
                 env.cloudfront_dist_domain,

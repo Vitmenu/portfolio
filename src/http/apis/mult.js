@@ -1,21 +1,6 @@
-import {
-    PutObjectCommand,
-    GetObjectCommand,
-    DeleteObjectCommand,
-    ListObjectsV2Command,
-}                                   from "@aws-sdk/client-s3";
-import {
-    CreateInvalidationCommand,
-}                                   from "@aws-sdk/client-cloudfront";
-import { getSignedUrl }             from "@aws-sdk/cloudfront-signer";
-import { v4 as uuidv4 }             from "uuid";
-import pgdb                         from "../../pgdb/pgdb.config.js";
-import { User }                     from "../../pgdb/entities.js";
-import userSession                  from "../../session/session.config.js";
 import env                          from "../../../config/env-initiator.js";
 import {
     userAction,
-    aiAction,
 } from '../../action/action.config.js';
 
 import path                         from "node:path";
