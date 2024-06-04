@@ -60,18 +60,6 @@ const singleUpload = multer({
     },
 }).single('image');
 
-// https://www.npmjs.com/package/multer
-
-// validate image file
-
-// create uuid for obj id when the image file is uploaded
-
-// save the uuid as the key for the image in s3 bucket
-
-// update entity to save the uuid
-
-// broad cast updated entity
-
 multRouter.post('/media/upload', singleUpload, asyncWrapper(async (req, res) => {
     if (req.user.cid == env.guestCid) {
 
@@ -79,33 +67,34 @@ multRouter.post('/media/upload', singleUpload, asyncWrapper(async (req, res) => 
 
     } else {
 
-        const getSharped = async (reqFile) => {
+        // const getSharped = async (reqFile) => {
             
-            const jpgFamily = ['image/jpeg', 'image/jpg'];
+        //     const jpgFamily = ['image/jpeg', 'image/jpg'];
     
-            let result;
+        //     let result;
     
-            if (jpgFamily.includes(reqFile.mimetype)) {
-                result = await sharp(reqFile.buffer)
-                    .jpeg({ quality: 10 })
-                    .toBuffer();
-            } else {
-                result = await sharp(reqFile.buffer)
-                    .png({ quality: 10 })
-                    .toBuffer();
-            };
+        //     if (jpgFamily.includes(reqFile.mimetype)) {
+        //         result = await sharp(reqFile.buffer)
+        //             .jpeg({ quality: 10 })
+        //             .toBuffer();
+        //     } else {
+        //         result = await sharp(reqFile.buffer)
+        //             .png({ quality: 10 })
+        //             .toBuffer();
+        //     };
     
-            return result;
-        };
-        const sharped = await getSharped(req.file);
+        //     return result;
+        // };
+        // const sharped = await getSharped(req.file);
     
-        const upload = Buffer.byteLength(req.file.buffer) > Buffer.byteLength(sharped) ? sharped : req.file.buffer;
+        // const upload = Buffer.byteLength(req.file.buffer) > Buffer.byteLength(sharped) ? sharped : req.file.buffer;
     
         const entity = JSON.parse(req.body.entity);
     
         const result = await userAction.updateMedia({
             reqUser: req.user,
-            body: upload, 
+            body: req.file.buffer, 
+            // body: upload, 
             contentType: req.file.mimetype,
             entityField: entity.field,
             entity: entity.param,
