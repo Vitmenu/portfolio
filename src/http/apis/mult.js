@@ -91,7 +91,7 @@ multRouter.post('/media/upload', singleUpload, asyncWrapper(async (req, res) => 
     
         const entity = JSON.parse(req.body.entity);
     
-        const result = await userAction.updateMedia({
+        const result = await userAction.updateProfile({
             reqUser: req.user,
             body: req.file.buffer, 
             // body: upload, 
@@ -114,6 +114,17 @@ multRouter.post('/media/delete', asyncWrapper(async (req, res) => {
 
     } else {
 
+        const result = await userAction.deleteProfile({
+            reqUser: req.user,
+            entityId: req.body.entityId,
+            entityField: req.body.entityField,
+        });
+
+        result
+            ? res.status(200).end()
+            : res.status(404).end();
+
+        res.status(404).end();
         
     };
 }));

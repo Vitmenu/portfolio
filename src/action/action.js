@@ -276,7 +276,7 @@ export class UserAction extends CommonAction {
         super();
     };
 
-    async updateMedia(options={reqUser, body, contentType, entityField, entity}) {
+    async updateProfile(options={reqUser, body, contentType, entityField, entity}) {
         try {
 
             if (!options.reqUser
@@ -307,11 +307,39 @@ export class UserAction extends CommonAction {
             return updated;
 
         } catch(err) {
-            console.log(err);
 
+            console.log(err);
             return false;
 
         };
+    };
+
+    async deleteProfile(options={reqUser, entityId, entityField}) {
+        try {
+
+            if (!options.reqUser || !options.entityId || !options.entityField) throw new Error(`Invalid arguments. received ${options}`);
+
+            let entity = await pgdb.get(
+                options.entityField,
+                options.entityField == 'user'
+                    ? options.reqUser.uid
+                    : options.entityId
+            );
+            entity = entity[options.entityField + 's'][0];
+
+            const result = await awsClient.s3delete({imageKey: entity.image_key});
+            if (!result) throw new Error('DeleteObject failed');
+
+            const updated = await this.updateEntity(options.reqUser.uid, options.entityField, {...entity, image_key: null});
+
+            return updated;
+            
+        } catch(err) {
+
+            console.log(err);
+            return false;
+
+        }
     };
 
     async checkMesgs(userId, unreadMesgs) {
