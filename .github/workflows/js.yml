@@ -43,11 +43,12 @@ jobs:
       #     username: ${{ secrets.DOCKER_USERNAME }}
       #     password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Testing building the Node.js image
+      - name: Create .env file
         run: |
-          echo "Testing building the Node.js image";
-          ls -al;
+          cd nodejs;
+          touch ./config/.env;
           pwd;
+          ls -1a config;
 
       # - name: Build and push
       #   uses: docker/build-push-action@v6
