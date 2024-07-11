@@ -18,7 +18,12 @@ jobs:
       - name: Clone code into the runner
         uses: actions/checkout@v4.1.1
 
-      - name: Install dependencies for ReactJS
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies for React.js
         run: |
           cd reactjs;
           npm install --prefix reactjs;
