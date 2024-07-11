@@ -1,4 +1,4 @@
-import env from "../../../config/env";
+import env from "../../../config/env.js";
 
 const templateFormer = (sender, senderCompany, message) => ({
     Source: 'Vitmenu Portfolio <no-reply@auth.vitmenu.com>',

@@ -26,10 +26,11 @@ jobs:
       - name: Install dependencies for React.js
         run: |
           cd reactjs;
-          npm install --prefix reactjs;
+          npm init -y;
+          npm install;
 
       - name: Build ReactJS
-        run: npm run build --prefix reactjs;
+        run: npm run build;
 
   # build-nodejs-image:
   #   runs-on: [ubuntu-latest]
