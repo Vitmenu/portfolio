@@ -19,12 +19,15 @@ jobs:
         uses: actions/checkout@v4.1.1
       
       - name: Testing compiling reactjs
-        run: ls -1
+        run: pwd
 
-  #     - name: Install dependencies
-  #       run: npm install --prefix reactjs
+      - name: Install dependencies for ReactJS
+        run: |
+          cd reactjs;
+          ls -1;
 
   #     - name: Build ReactJS
+          # npm install --prefix reactjs;
   #       run: npm run build --prefix reactjs
   # build-nodejs-image:
   #   runs-on: [ubuntu-latest]
