@@ -11,6 +11,10 @@ const companys = {
 };
 
 const env = process.env.NODE_ENV === 'production' ? {
+    mode: 'production',
+    production: true,
+    development: false,
+
     cookie_signature: process.env.COOKIE_SIGNATURE,
     cloudfront_pk_id: process.env.CLOUDFRONT_PK_ID,
     cloudfront_pk: fs.readFileSync(path.resolve('config', 'sslkeys', 'cloudfront', 'private_key.pem'), 'utf-8'),
@@ -53,6 +57,9 @@ const env = process.env.NODE_ENV === 'production' ? {
     portfolio_host: process.env.PORTFOLIO_HOST,
 
 } : {
+    mode: 'development',
+    production: false,
+    development: true,
     cookie_signature: 'secret-123124125',
     cloudfront_pk_id: process.env.CLOUDFRONT_PK_ID,
     cloudfront_pk: fs.readFileSync(path.resolve('config', 'sslkeys', 'cloudfront', 'private_key.pem'), 'utf-8'),
