@@ -86,7 +86,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_VERSION }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-        working-directory: nodejs
+          working-directory: ./nodejs
 
   # deploy-nodejs-container:
   #   needs: build
