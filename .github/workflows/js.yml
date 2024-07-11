@@ -94,4 +94,4 @@ jobs:
     runs-on: [prt-cicd-portfolio]
     steps:
       - name: Deploy docker image
-        run: sudo sh /home/ubuntu/script/deploy.sh ${{ secrets.DOCKER_NGINX }} ${{ secrets.DOCKER_APP }} ${{ secrets.DOCKER_APP_PORT }} ${{ secrets.DOCKER_NETWORK }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_REPOSITORY }}
+        run: sudo sh /home/ubuntu/script/portfolio.deploy.sh ${{ secrets.DOCKER_NGINX }} ${{ secrets.DOCKER_APP }} ${{ secrets.DOCKER_APP_PORT }} ${{ secrets.DOCKER_NETWORK }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_REPOSITORY }} ${{ secrets.DOCKER_VOLUME }}

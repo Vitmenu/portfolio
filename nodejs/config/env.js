@@ -10,8 +10,6 @@ const companys = {
     ]),
 };
 
-console.log('process.env.NODE_ENV:', process.env.NODE_ENV);
-
 const env = process.env.NODE_ENV === 'production' ? {
     mode: 'production',
     production: true,
