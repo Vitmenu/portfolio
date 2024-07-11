@@ -77,15 +77,15 @@ jobs:
           echo UID_MASTER=${{ secrets.UID_MASTER }} >> ./config/.env;
           echo UID_ASSISTANT=${{ secrets.UID_ASSISTANT }} >> ./config/.env;
 
-      # - name: Build and push
-      #   uses: docker/build-push-action@v6
-      #   with:
-      #     push: true
-      #     context: ./
-      #     file: ./Dockerfile
-      #     tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_VERSION }}
-      #     cache-from: type=gha
-      #     cache-to: type=gha,mode=max
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          context: ./
+          file: ./Dockerfile
+          tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_VERSION }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
   # deploy-nodejs-container:
   #   needs: build
