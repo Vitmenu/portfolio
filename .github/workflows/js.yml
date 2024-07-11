@@ -4,9 +4,10 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - 'nodejs/**'
-    #   - 'reactjs/**'
+    paths:
+      - '.github/workflows/js.yml'
+      - 'nodejs/**'
+      - 'reactjs/**'
 
 jobs:
   build-nodejs-image:
@@ -87,9 +88,9 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  # deploy-nodejs-container:
-  #   needs: build
-  #   runs-on: [prt-cicd-portfolio]
-  #   steps:
-  #     - name: Deploy docker image
-  #       run: sudo sh /home/ubuntu/script/deploy.sh ${{ secrets.DOCKER_NGINX }} ${{ secrets.DOCKER_APP }} ${{ secrets.DOCKER_APP_PORT }} ${{ secrets.DOCKER_NETWORK }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_REPOSITORY }}
+  deploy-nodejs-container:
+    needs: build
+    runs-on: [prt-cicd-portfolio]
+    steps:
+      - name: Deploy docker image
+        run: sudo sh /home/ubuntu/script/deploy.sh ${{ secrets.DOCKER_NGINX }} ${{ secrets.DOCKER_APP }} ${{ secrets.DOCKER_APP_PORT }} ${{ secrets.DOCKER_NETWORK }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_REPOSITORY }}
