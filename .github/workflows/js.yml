@@ -25,17 +25,17 @@ jobs:
 
       - name: Install dependencies for React.js
         run: |
-          pwd;
           cd reactjs;
-          ls -al;
-          cat package.json;
+          npm init -y;
+          npm install;
 
       - name: Build ReactJS
-        run: npm run build;
+        run: |
+          ls -l
+          pwd;
 
   # build-nodejs-image:
-          # npm init -y;
-          # npm install;
+          # npm run build;
   #   runs-on: [ubuntu-latest]
   #   permissions:
   #     id-token: write
