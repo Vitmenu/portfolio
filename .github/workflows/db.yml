@@ -1,0 +1,47 @@
+name: Build and Deploy Database Server
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'db/**'
+
+jobs:
+  build-postgres-image:
+    runs-on: [ubuntu-latest]
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Testing for the database
+        run: echo "Testing for the database"
+      # - name: Clone code into the runner
+      #   uses: actions/checkout@v4.1.1
+      
+      # - name: Docker Buildx
+      #   uses: docker/setup-buildx-action@v3
+
+      # - name: Docker Login
+      #   uses: docker/login-action@v3
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # - name: Build and push
+      #   uses: docker/build-push-action@v6
+      #   with:
+      #     push: true
+      #     context: ./
+      #     file: ./Dockerfile
+      #     tags: ${{ secrets.DOCKER_USERNAME }}/${{ secrets.DOCKER_REPOSITORY }}:${{ secrets.DOCKER_VERSION }}
+      #     cache-from: type=gha
+      #     cache-to: type=gha,mode=max
+
+  deploy-postgres-container:
+    needs: build
+    runs-on: [prt-cicd-portfolio]
+    steps:
+      - name: Deploy docker image
+        # run: sudo sh /home/ubuntu/script/deploy.sh ${{ secrets.DOCKER_NGINX }} ${{ secrets.DOCKER_APP }} ${{ secrets.DOCKER_APP_PORT }} ${{ secrets.DOCKER_NETWORK }} ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_REPOSITORY }}
+        run: echo "Deploying the database"
