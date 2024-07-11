@@ -55,8 +55,7 @@ jobs:
       - name: Testing building the Node.js image
         run: |
           echo "Testing building the Node.js image";
-          ls -1;
-          cd nodejs;
+          ls -al;
 
       # - name: Build and push
       #   uses: docker/build-push-action@v6
