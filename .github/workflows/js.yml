@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'nodejs/**'
-      - 'reactjs/**'
+    # paths:
+    #   - 'nodejs/**'
+    #   - 'reactjs/**'
 
 jobs:
   compile-reactjs:
