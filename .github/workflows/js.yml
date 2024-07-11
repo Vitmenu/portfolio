@@ -17,21 +17,15 @@ jobs:
     steps:
       - name: Clone code into the runner
         uses: actions/checkout@v4.1.1
-      
-      - name: Testing compiling reactjs
-        run: |
-          ls -1;
-          ls -1 ../;
 
       - name: Install dependencies for ReactJS
         run: |
           cd reactjs;
-          ls -1;
+          npm install --prefix reactjs;
 
+      - name: Build ReactJS
+        run: npm run build --prefix reactjs;
 
-  #     - name: Build ReactJS
-          # npm install --prefix reactjs;
-  #       run: npm run build --prefix reactjs
   # build-nodejs-image:
   #   runs-on: [ubuntu-latest]
   #   permissions:
