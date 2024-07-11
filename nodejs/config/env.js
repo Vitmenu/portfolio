@@ -27,6 +27,13 @@ const env = process.env.NODE_ENV === 'production' ? {
         sameSite: 'strict',
         signed: true,
     },
+
+    db_host: process.env.DB_HOST,
+    postgres_user: process.env.POSTGRES_USER,
+    postgres_db: process.env.POSTGRES_DB,
+    db_port: process.env.DB_PORT,
+    postgres_password: process.env.POSTGRES_PASSWORD,
+
     ...companys,
     masterUid: process.env.UID_MASTER,
     assistantUid: process.env.UID_ASSISTANT,
@@ -62,7 +69,13 @@ const env = process.env.NODE_ENV === 'production' ? {
         sameSite: 'strict',
         signed: true,
     },
-    postgres_db: 'portfolio',
+    
+    db_host: process.env.DB_HOST,
+    postgres_user: process.env.POSTGRES_USER,
+    postgres_db: process.env.POSTGRES_DB,
+    db_port: process.env.DB_PORT,
+    postgres_password: process.env.POSTGRES_PASSWORD,
+
     ...companys,
     masterUid: process.env.UID_MASTER,
     assistantUid: process.env.UID_ASSISTANT,
