@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif+JP:wght@200;300;400;500;600;700;900&family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200;0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;0,8..60,800;0,8..60,900;1,8..60,200;1,8..60,300;1,8..60,400;1,8..60,500;1,8..60,600;1,8..60,700;1,8..60,800;1,8..60,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&Geologica:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes shake {
+	0% { transform: translateY(0); }
+	10% { transform: translateY(-5px); }
+	40% { transform: translateY(3px); }
+	50% { transform: translateY(-2px); }
+	60% { transform: translateY(4px); }
+	70% { transform: translateY(-6px); }
+	100% { transform: translateY(0); }
+}
+
+.noselect {
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+:root {
+	--bg-light: rgb(255,255,255);
+	--bg-dark: #171717;
+}
+.bg-color {
+	background: var(--bg-light);
+	background-attachment: fixed;
+	color: rgb(63 63 70 / 1);
+}
+.modal-color {
+	color: rgb(63 63 70 / 1);
+}
+.divide-color {
+    border-color: #cbd5e1;
+}
+
+/* .light .bg-color {
+	background: var(--bg-light);
+	background-attachment: fixed;
+	color: rgb(63 63 70 / 1);
+}
+.light .modal-color {
+	color: rgb(63 63 70 / 1);
+}
+.light .divide-color {
+    border-color: #cbd5e1;
+} */
+
+/* @media (prefers-color-scheme: light) {
+
+    .bg-color {
+		background: var(--bg-light);
+		background-attachment: fixed;
+		color: rgba(63 63 70 / 1);
+	}
+    .modal-color {
+		color: rgba(63 63 70 / 1);
+	}
+    .divide-color {
+        border-color: #cbd5e1;
+    }
+} */
+
+/* .dark .bg-color {
+	background: var(--bg-dark);
+	background-attachment: fixed;
+	color: rgb(228 228 231 / 1);
+}
+.dark .modal-color {
+	color: rgb(228 228 231 / 1);
+}
+.dark .divide-color {
+    border-color: #525252;
+} */
+
+/* @media (prefers-color-scheme: dark) {
+	
+    .bg-color {
+		background: var(--bg-dark);
+		background-attachment: fixed;
+		color: rgba(228 228 231 / 1);
+	}
+    .modal-color {
+		color: rgba(228 228 231 / 1);
+	}
+    .divide-color {
+        border-color: #525252;
+    }
+} */

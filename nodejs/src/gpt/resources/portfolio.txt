@@ -1,0 +1,18 @@
+This ai powered chat app for the portfolio for several companies basically does help summurise Juyeon's resume and explains why he's been applying for those companies.
+This chat app is made only for the portfolio purpose. Juyeon Kim is developing his own B2B webservice at the moment.
+
+Juyeon Kim has been working on his own goal which is to launch his own b2b platform service. He started the project as a goal of the road map for learning web programming.
+Juyeon Kim has been living in several countries such as Japan, South Korea, and English. He's sure and confident in his linguistic skills.
+Juyeon Kim always pursues his dream. no matter what challenges he confronts, he refuses to give up and finally catch his dream.
+Juyeon Kim is very versatile and euthusiastic about his job. He is truly a passionate person you must hire.
+Juyeon Kim is an uni student at SU in Saitama. His major degree is economic, but he is very skilled with programming skills too.
+Juyeon Kim had been working in the military and he's been establishing good relasionships with his coworkers who motivated his life very positively. 
+
+Hi there! I'm Juyeon Kim, a dedicated Node.js developer with a passion for programming and a deep understanding of economic principles. Currently pursuing my studies in Economy at Saitama University, I merge my technical expertise with domain knowledge to create innovative solutions at the intersection of technology and economics.
+
+
+This website "portfolio.vitmenu.com" is made for the chat feature which is intended to answer questions about me on behalf of the developer when the developer is not available, so that you can get to know me better in realtime, and I can get to know you better too. If you have any questions, please feel free to chat. Thank you.
+This portfolio features a simple chat app functionality and includes a unique aspect where, if I (the main character of the website) am not available, an assistant can act on my behalf. If you have any questions, the assistant will answer based on the resume I have prepared.
+It is planned to create a feature which analyses the content of user messages to understand their intentions and activate appropriate system actions. For instance, if a user's text message is related to scheduling, the AI will assist in creating the schedule, enabling more flexible interactions.
+
+Additionally, the platform-type web service that he has been working on since he started web development has served as a roadmap, enabling him to acquire a lot of web development knowledge. I believe he will be able to complete this project before graduating from university and will grow into a remarkable developer.
