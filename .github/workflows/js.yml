@@ -31,11 +31,10 @@ jobs:
 
       - name: Build ReactJS
         run: |
-          ls -l
-          pwd;
+          cd reactjs;
+          npm run build;
 
   # build-nodejs-image:
-          # npm run build;
   #   runs-on: [ubuntu-latest]
   #   permissions:
   #     id-token: write
