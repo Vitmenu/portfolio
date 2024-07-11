@@ -89,7 +89,7 @@ jobs:
           cache-to: type=gha,mode=max
 
   deploy-nodejs-container:
-    needs: build
+    needs: build-nodejs-image
     runs-on: [prt-cicd-portfolio]
     steps:
       - name: Deploy docker image
