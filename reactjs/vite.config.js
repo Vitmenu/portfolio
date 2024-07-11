@@ -20,7 +20,6 @@ const appSelector = (target) => {
 // const target = appSelector('notfound');
 const target = appSelector('app');
 
-// https://vitejs.dev/config/
 export default defineConfig({
 	plugins: [react()],
 	root: target.root,
