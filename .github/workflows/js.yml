@@ -9,39 +9,30 @@ on:
     #   - 'reactjs/**'
 
 jobs:
-  # compile-reactjs:
-  #   runs-on: [ubuntu-latest]
-  #   permissions:
-  #     id-token: write
-  #     contents: read
-  #   steps:
-  #     - name: Clone code into the runner
-  #       uses: actions/checkout@v4.1.1
-
-  #     - name: Setup Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '20'
-
-  #     - name: Install dependencies for React.js
-  #       run: |
-  #         cd reactjs;
-  #         npm init -y;
-  #         npm install;
-
-  #     - name: Build ReactJS
-  #       run: |
-  #         cd reactjs;
-  #         npm run build;
-
   build-nodejs-image:
     runs-on: [ubuntu-latest]
     permissions:
       id-token: write
       contents: read
     steps:
-      # - name: Clone code into the runner
-      #   uses: actions/checkout@v4.1.1
+      - name: Clone code into the runner
+        uses: actions/checkout@v4.1.1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Install dependencies for React.js
+        run: |
+          cd reactjs;
+          npm init -y;
+          npm install;
+
+      - name: Build ReactJS
+        run: |
+          cd reactjs;
+          npm run build;
       
       # - name: Docker Buildx
       #   uses: docker/setup-buildx-action@v3
@@ -56,6 +47,7 @@ jobs:
         run: |
           echo "Testing building the Node.js image";
           ls -al;
+          pwd;
 
       # - name: Build and push
       #   uses: docker/build-push-action@v6
