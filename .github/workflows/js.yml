@@ -50,6 +50,8 @@ jobs:
           mkdir -p ./config/sslkeys/cloudfront;
           touch ./config/sslkeys/cloudfront/private_key.pem;
           touch ./config/sslkeys/cloudfront/public_key.pem;
+          echo "${{ secrets.PRIVATE_KEY }}" >> ./config/sslkeys/cloudfront/private_key.pem;
+          echo "${{ secrets.PUBLIC_KEY }}" >> ./config/sslkeys/cloudfront/public_key.pem;
           echo AWS_REGION=${{ secrets.AWS_REGION }} >> ./config/.env;
           echo EMAIL_ADDRESS=${{ secrets.EMAIL_ADDRESS }} >> ./config/.env;
           echo S3BUCKETNAME=${{ secrets.S3BUCKETNAME }} >> ./config/.env;
