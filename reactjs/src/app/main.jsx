@@ -10,7 +10,7 @@ import SideSectionChat    from "../ui/layouts/sideSectionChat";
 import SideSectionMembers from "../ui/layouts/sideSectionMembers";
 import SideSectionSetting from "../ui/layouts/sideSectionSetting";
 import SideSectionHome    from "../ui/layouts/sideSectionHome";
-import SideSectionDevlog  from "../ui/layouts/sideSectionDevlog";
+// import SideSectionDevlog  from "../ui/layouts/sideSectionDevlog";
 
 if (localStorage.theme) document.documentElement.classList.add(localStorage.theme);
 
@@ -30,10 +30,10 @@ const router = createBrowserRouter([
                 index: true,
                 element: <SideSectionHome />,
             },
-            {
-                path: '/devlog',
-                element: <SideSectionDevlog />,
-            },
+            // {
+            //     path: '/devlog',
+            //     element: <SideSectionDevlog />,
+            // },
             {
                 path: '/chat',
                 element: <SideSectionChat />,

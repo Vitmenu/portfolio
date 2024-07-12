@@ -52,7 +52,7 @@ const Sidebar = ({ sidebarClosed, setSidebarClosed }) => {
                     </div>
                 </div>
                 <SidebarItem svg={svg.about} dataLang={'home'} linkTo={'/'} />
-                <SidebarItem svg={svg.tool} dataLang={'dvlg'} linkTo={'/devlog'} />
+                {/* <SidebarItem svg={svg.tool} dataLang={'dvlg'} linkTo={'/devlog'} /> */}
                 <SidebarItem svg={svg.message} dataLang={'cht'} linkTo={'/chat'} />
                 <SidebarItem svg={svg.team} dataLang={'mbr'} linkTo={'/member'} />
                 <SidebarItem svg={svg.setting} dataLang={'stg'} linkTo={'/setting'} />
