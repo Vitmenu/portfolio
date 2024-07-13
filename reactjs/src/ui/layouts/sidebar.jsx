@@ -33,7 +33,7 @@ const Sidebar = ({ sidebarClosed, setSidebarClosed }) => {
         } else {
             sidebar.style.left = '0';
             localStorage.removeItem('sidebar-closed');
-        };
+        }
         return () => setTimeout(() => setTooltip(true), 1000);
     }, [sidebarClosed]);
 
