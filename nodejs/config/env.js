@@ -3,7 +3,9 @@ import path       from "node:path";
 
 const companys = {
     companyList: new Map([
-        [process.env.CID_COMPANY1, 'MyNavi'],
+        [process.env.CID_COMPANY1, process.env.CID_COMPANY1_NAME],
+        [process.env.CID_COMPANY2, process.env.CID_COMPANY2_NAME],
+        [process.env.CID_COMPANY3, process.env.CID_COMPANY3_NAME],
         [process.env.CID_GUEST, 'Guest'],
         [process.env.CID_PERSONAL, 'Personal'],
         [process.env.CID_MASTER, 'Master'],

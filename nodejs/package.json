@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node --watch --env-file=./config/.env src/index.js",
-    "build": "sh ../scripts/git.sh",
     "lang": "node --watch ./exec/lang.js"
   },
   "keywords": [],
