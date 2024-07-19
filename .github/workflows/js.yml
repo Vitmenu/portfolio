@@ -76,6 +76,11 @@ jobs:
           echo CID_PERSONAL=${{ secrets.CID_PERSONAL }} >> ./config/.env;
           echo CID_MASTER=${{ secrets.CID_MASTER }} >> ./config/.env;
           echo CID_COMPANY1=${{ secrets.CID_COMPANY1 }} >> ./config/.env;
+          echo CID_COMPANY2=${{ secrets.CID_COMPANY2 }} >> ./config/.env;
+          echo CID_COMPANY3=${{ secrets.CID_COMPANY3 }} >> ./config/.env;
+          echo CID_COMPANY1_NAME=${{ secrets.CID_COMPANY1_NAME }} >> ./config/.env;
+          echo CID_COMPANY2_NAME=${{ secrets.CID_COMPANY2_NAME }} >> ./config/.env;
+          echo CID_COMPANY3_NAME=${{ secrets.CID_COMPANY3_NAME }} >> ./config/.env;
           echo UID_MASTER=${{ secrets.UID_MASTER }} >> ./config/.env;
           echo UID_ASSISTANT=${{ secrets.UID_ASSISTANT }} >> ./config/.env;
 
